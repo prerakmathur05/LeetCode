@@ -2,7 +2,7 @@ class Solution:
     def minWindow(self, s: str, t: str) -> str:
         
         need = {i:t.count(i) for i in t}
-        have = {i:0 for i in t}
+        have = {}
         haveV, needV= 0,len(need)
         res,reslen=[-1,-1], float("inf")
         l=0
