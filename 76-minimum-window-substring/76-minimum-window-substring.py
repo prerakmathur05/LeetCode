@@ -9,7 +9,7 @@ class Solution:
         for r in range(len(s)):
             c=s[r]
             have[c]=1+have.get(c,0)
-            if c in t and need[c]==have[c]:
+            if c in need and need[c]==have[c]:
                 haveV+=1
             while(needV==haveV):
                 if reslen > r-l+1:
