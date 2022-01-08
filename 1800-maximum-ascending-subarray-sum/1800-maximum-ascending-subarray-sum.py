@@ -2,18 +2,18 @@ class Solution:
     def maxAscendingSum(self, nums: List[int]) -> int:
         result=0
         curr=float("-inf")
-        l=[]
+        maxi=0
         for value in nums:
             if value > curr:
                 curr=value
                 result+=curr
             else:
-                l.append(result)
+                maxi=max(maxi,result)
                 curr=value
                 result=value
                 
-        l.append(result)
-        return max(l)
+        maxi=max(maxi,result)
+        return maxi
             
             
                 
