@@ -9,11 +9,11 @@ class Solution:
         def swap(head):
             if not head or not head.next:
                 return head
-            fnode=head
-            snode=head.next
-            fnode.next=swap(snode.next)
-            snode.next=fnode
-            return snode
+            firstnode=head
+            secondnode=head.next
+            firstnode.next=swap(secondnode.next)
+            secondnode.next=firstnode
+            return secondnode
             
                              
         return swap(head)
