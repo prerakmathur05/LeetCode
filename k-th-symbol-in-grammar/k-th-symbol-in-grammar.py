@@ -6,7 +6,8 @@ class Solution:
                 return -1
             if n==1:
                 return 0
-            parent=grammar(n-1,math.ceil(k/2))  #k/2 + k%2 is math.ceil of k/2
+            parent=grammar(n-1, k//2 + k%2)  #k/2 + k%2 is math.ceil of k/2
+            print(k)
             iskodd= (k%2==1)
             print(parent)
             if parent==1:
