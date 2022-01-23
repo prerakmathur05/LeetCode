@@ -53,6 +53,7 @@ class Solution:
         def letsclean(row,col,initial_direction):
             visited.add((row,col))
             robot.clean() 
+            print()
             for i in range(4):
                 d=(initial_direction+i) % 4
                 newrow,newcol= row+ directions[d][0], col+ directions[d][1]
