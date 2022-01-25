@@ -32,12 +32,10 @@ class Solution:
             return True
         issolved = False
         def backtrack(row,col):
-            print(row)
             if row==9:
                 nonlocal issolved
                 issolved = True
                 return      
-        #    print(f"{row}, {col}")
             if board[row][col]==".":
                 for value in range(1,10):
                     value=str(value)
