@@ -14,6 +14,8 @@ class Solution:
                     return False
                 if issame(p.left,q.left) and issame(p.right,q.right):
                     return True
+                else:
+                    return False
             else:
                 return False
         return issame(p,q)
