@@ -5,6 +5,7 @@ class Solution:
         def backtrack(first):
             if first==n:
                 res.append(nums[:])
+                return
             for j in range(first,n):
                 nums[first],nums[j]=nums[j],nums[first]
                 backtrack(first+1)
