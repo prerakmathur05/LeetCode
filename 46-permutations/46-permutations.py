@@ -1,5 +1,8 @@
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
+        '''
+we have to implement backtracking, we keep on taking one number from array and arrange remaining number and then remove the first number and move on.
+        '''
         res=[]
         n=len(nums)
         def backtrack(first):
@@ -14,6 +17,15 @@ class Solution:
         backtrack(0)
         return res
                 
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
