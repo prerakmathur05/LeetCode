@@ -1,35 +1,30 @@
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
-        print(nums)
-        lens=len(nums)
+        leng=len(nums)
         res=[]
-        for i in range(lens):
+        def twosum(nums,i,res):
+            target=nums[i]
+            r=leng
+            hashmap={}
+            j=i+1
+            while j<r:
+                t=-target-nums[j]
+                if t in hashmap:
+                    res.append([nums[i],t,nums[j]])
+                    while j+1<r and nums[j]==nums[j+1]:
+                        j+=1
+                hashmap[nums[j]]=j
+                j+=1
+        for i in range(leng):
             if nums[i]>0:
                 break
-            if i>0 and nums[i]==nums[i-1]:
-                continue
-            l=i+1
-            r=lens-1
-            while (l<r):
-                
-                if nums[i]+nums[l]+nums[r]>0:
-                    r-=1
-                elif nums[i]+nums[l]+nums[r]<0:
-                    l+=1
-                else:
-                    res.append([nums[i],nums[l],nums[r]])
-                    l+=1
-                    r-=1
-                    while l<r and nums[l]==nums[l-1]:
-                        l+=1
+            if i==0 or nums[i-1]!=nums[i]:
+                twosum(nums,i,res)
         return res
-    
-        
-        
-            
-            
-            
+              
+                
+                
             
             
             
