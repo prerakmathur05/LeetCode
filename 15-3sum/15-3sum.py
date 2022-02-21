@@ -3,7 +3,26 @@ class Solution:
         nums.sort()
         leng=len(nums)
         res=[]
-        def twosum(nums,i,res):
+        def two_sum(nums,i,res):
+            l=i+1
+            r=leng-1
+            while l<r:
+                target=nums[i]+nums[l]+nums[r]
+                if target>0:
+                    r-=1
+                elif target<0:
+                    l+=1
+                else:
+                    res.append([nums[i],nums[l],nums[r]])
+                    r-=1
+                    l+=1
+                    while l<r and nums[l-1]==nums[l]:
+                        l+=1
+                    
+                
+            
+            
+        def two_sum_with_hashmap(nums,i,res):
             target=nums[i]
             r=leng
             hashmap={}
@@ -20,7 +39,9 @@ class Solution:
             if nums[i]>0:
                 break
             if i==0 or nums[i-1]!=nums[i]:
-                twosum(nums,i,res)
+                 #two_sum_with_hashmap(nums,i,res)
+                two_sum(nums,i,res)
+
         return res
               
                 
