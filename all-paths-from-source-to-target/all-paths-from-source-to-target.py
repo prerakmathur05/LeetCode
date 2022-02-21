@@ -2,6 +2,29 @@ class Solution:
     def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
         start=0
         end=len(graph)-1
+        path=[start]
+        queue=deque([path])
+        res=[]
+        while queue:
+            curr=queue.popleft()
+            node=curr[-1]
+            for child in graph[node]:
+                if child==end:
+                    temp=curr[:]
+                    temp.append(child)
+                    res.append(temp[:])
+                else:
+                    temp=curr[:]
+                    temp.append(child)
+                    queue.append(temp)
+            
+        return res
+            
+        
+        
+        
+        start=0
+        end=len(graph)-1
         res=[]
         path=[]
         def backtrack(node,path):
@@ -15,16 +38,6 @@ class Solution:
                 
         backtrack(0,path)
         return res
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         #its given that its a directed acyclic graph so we really don't need to worry about cycles otherwise
         #we would be stuck in a loop forever
