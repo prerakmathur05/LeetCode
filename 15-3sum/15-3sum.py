@@ -1,28 +1,10 @@
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        #nums.sort()
+        nums.sort()
         leng=len(nums)
-        res=set()
-        def two_sums_without_sort(nums,res):
-            l=len(nums)
-            hashmap={}
-            duplicates=set()
-            for i in range(l):
-                if nums[i] not in duplicates:
-                    for j in range(i+1,l):
-                        target=-nums[i]-nums[j]
-                        if target in hashmap and hashmap[target]==i:
-                            res.add(tuple(sorted([nums[i],target,nums[j]])))
-                        hashmap[nums[j]]=i
-        two_sums_without_sort(nums,res)
-        return res
+        res=[]
         
-        
-        
-
-                        
-        
-        
+    
         def two_sum_without_hashmap(nums,i,res):
             l=i+1
             r=leng-1
@@ -61,7 +43,22 @@ class Solution:
 
         return res
               
-                
+        
+    def two_sums_without_sort(nums):
+            l=len(nums)
+            hashmap={}
+            result=()
+            duplicates=set()
+            for i in range(l):
+                if nums[i] not in duplicates:
+                    for j in range(i+1,l):
+                        target=-nums[i]-nums[j]
+                        if target in hashmap and hashmap[target]==i:
+                                                                        result.add(tuple(sorted([nums[i],target,nums[j]])))
+                        hashmap[nums[j]]=i
+
+        
+                        
                 
             
             
