@@ -14,10 +14,8 @@ class Solution:
         return dp(len(grid)-1,len(grid[0])-1)
        
     
-    
-    
     '''
-        Seems to be a DP problem at first but if we closely observe, the               allowed movement is right and down only, so it can be solved with             greedy too and it will be more effecient
+        Seems to be a DP problem at first but if we closely observe, the  allowed movement is right and down only, so it can be solved with greedy too and it will be more effecient
        
         rowmax=len(grid)
         colmax=len(grid[0])
