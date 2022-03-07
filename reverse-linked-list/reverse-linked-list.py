@@ -8,7 +8,7 @@ class Solution:
         def reversing(head):
             if not head or not head.next:
                 return head
-            next_node=ListNode(0)
+            #next_node=ListNode(0)
             next_node=reversing(head.next)
             head.next.next=head
             head.next=None
