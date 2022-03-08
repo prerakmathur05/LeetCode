@@ -1,6 +1,18 @@
 class Solution:
     def findNumbers(self, nums: List[int]) -> int:
         count=0
+        def iseven(n):
+            count=0
+            while n>=1:
+                n/=10
+                count+=1
+            return count%2==0
+        for num in nums:
+            if iseven(num):
+                count+=1
+        return count
+            
+        
         for num in nums:
             if num<10:
                 continue
